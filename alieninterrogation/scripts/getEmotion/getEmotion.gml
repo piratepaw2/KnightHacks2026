@@ -1,7 +1,7 @@
 //Changes the global emotion data 
 function RequestEmotion() {
 	
-	//may be unneeded?
+	//explicit call may not be required for start emotion protocol. 
     if (!variable_global_exists("emotion_data")) {
         StartEmotionProtocol();
     }
