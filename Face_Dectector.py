@@ -44,7 +44,9 @@ state = {
 stop_event = Event()
 shape_history = deque(maxlen=7)
 face_history = deque(maxlen=5)
+mouth_open_history = deque(maxlen=5)
 face_mesh = None
+last_face_box = None
 
 
 def ensure_haar_cascade():
@@ -102,6 +104,7 @@ def open_camera(camera_index=0):
 
 
 def locate_face(frame):
+    global last_face_box
     gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
     gray = cv2.equalizeHist(gray)
 
@@ -116,18 +119,41 @@ def locate_face(frame):
         print(f"DEBUG: Haar cascade failed to load: {cascade_path}")
         return None
 
-    faces = face_cascade.detectMultiScale(
-        gray,
-        scaleFactor=1.1,
-        minNeighbors=3,
-        minSize=(30, 30),
-    )
-    print(f"DEBUG: cascade path={cascade_path} faces_detected={len(faces)}")
-    if len(faces) == 0:
+    search_regions = [gray]
+    if last_face_box is not None:
+        x, y, w, h = last_face_box
+        pad = int(max(w, h) * 0.35)
+        x0 = max(0, x - pad)
+        y0 = max(0, y - pad)
+        x1 = min(frame.shape[1], x + w + pad)
+        y1 = min(frame.shape[0], y + h + pad)
+        search_regions.append(gray[y0:y1, x0:x1])
+
+    best_box = None
+    for region in search_regions:
+        faces = face_cascade.detectMultiScale(
+            region,
+            scaleFactor=1.08,
+            minNeighbors=1,
+            minSize=(25, 25),
+        )
+        if len(faces) == 0:
+            continue
+        x, y, w, h = max(faces, key=lambda box: box[2] * box[3])
+        if region is gray:
+            box = (x, y, w, h)
+        else:
+            box = (x + x0, y + y0, w, h)
+        best_box = box
+        break
+
+    print(f"DEBUG: cascade path={cascade_path} faces_detected={0 if best_box is None else 1}")
+    if best_box is None:
         return None
 
-    x, y, w, h = max(faces, key=lambda box: box[2] * box[3])
-    padding = int(0.15 * max(w, h))
+    x, y, w, h = best_box
+    last_face_box = (x, y, w, h)
+    padding = int(0.2 * max(w, h))
     x = max(0, x - padding)
     y = max(0, y - padding)
     x2 = min(frame.shape[1], x + w + (padding * 2))
@@ -202,9 +228,15 @@ def estimate_face_shape_from_landmarks(frame, face):
         mouth_corner_lift = mouth_center_y - mouth_corner_avg_y
         mouth_corner_drop = mouth_corner_avg_y - mouth_center_y
 
-        # Convert the mouth geometry into a more explicit frown signal.
-        # A strong frown usually pulls both corners downward and makes the mouth
-        # appear compact rather than wide/open.
+        # Direct open-mouth detection should dominate the classifier. If the mouth is
+        # sufficiently open and stays open for at least one frame, classify it as
+        # surprise regardless of the subtle smile/frown geometry.
+        # 2x easier detection: a mouth that is clearly open should trigger surprise
+        # when the vertical distance is roughly 1/4 of the mouth width.
+        mouth_open = mouth_height > 0.030 and mouth_width > 0.06 and mouth_height >= (mouth_width * 0.25)
+        mouth_open_history.append(1 if mouth_open else 0)
+        mouth_open_streak = sum(mouth_open_history)
+
         frown_score = 0.0
         if mouth_corner_drop > 0.01:
             frown_score += mouth_corner_drop * 16.0
@@ -213,8 +245,8 @@ def estimate_face_shape_from_landmarks(frame, face):
         if mouth_ratio < 1.2:
             frown_score += (1.2 - mouth_ratio) * 1.5
 
-        if mouth_height > 0.075 and eye_open_score > 0.00 and mouth_width > 0.12:
-            return "surprise", min(0.99, 0.58 + max(0.0, mouth_open_score) + max(0.0, eye_open_score))
+        if mouth_open and mouth_open_streak >= 1:
+            return "surprise", min(0.99, 0.72 + max(0.0, mouth_open_score) + max(0.0, eye_open_score))
         if smile_score > 0.12 and mouth_corner_lift > 0.00:
             return "smile", min(0.99, 0.55 + smile_score)
 
