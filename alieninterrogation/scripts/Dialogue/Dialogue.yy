@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Dialogue",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Dialogue",
+  "parent":{
+    "name":"alieninterrogation",
+    "path":"alieninterrogation.yyp",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
