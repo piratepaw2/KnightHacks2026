@@ -30,6 +30,12 @@ except Exception as exc:  # pragma: no cover - optional dependency
     mp = None
     MP_IMPORT_ERROR = exc
 
+FRAME_WIDTH = 640
+FRAME_HEIGHT = 480
+DETECTION_SCALE = 0.5
+FRAME_SKIP = 2
+PROCESS_INTERVAL = 0.05
+
 app = Flask(__name__)
 state_lock = Lock()
 state = {
@@ -42,9 +48,9 @@ state = {
     "camera_index": None,
 }
 stop_event = Event()
-shape_history = deque(maxlen=7)
-face_history = deque(maxlen=5)
-mouth_open_history = deque(maxlen=5)
+shape_history = deque(maxlen=4)
+face_history = deque(maxlen=3)
+mouth_open_history = deque(maxlen=3)
 face_mesh = None
 last_face_box = None
 
@@ -95,8 +101,9 @@ def open_camera(camera_index=0):
         for backend in (cv2.CAP_DSHOW, cv2.CAP_MSMF, cv2.CAP_ANY):
             camera = cv2.VideoCapture(index, backend)
             if camera.isOpened():
-                camera.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
-                camera.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
+                camera.set(cv2.CAP_PROP_FRAME_WIDTH, FRAME_WIDTH)
+                camera.set(cv2.CAP_PROP_FRAME_HEIGHT, FRAME_HEIGHT)
+                camera.set(cv2.CAP_PROP_FPS, 30)
                 return camera, index
             camera.release()
 
@@ -105,8 +112,8 @@ def open_camera(camera_index=0):
 
 def locate_face(frame):
     global last_face_box
-    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-    gray = cv2.equalizeHist(gray)
+    if frame is None or frame.size == 0:
+        return None
 
     try:
         cascade_path = ensure_haar_cascade()
@@ -117,28 +124,36 @@ def locate_face(frame):
     if face_cascade.empty():
         return None
 
+    source_h, source_w = frame.shape[:2]
+    target_w = max(1, int(source_w * DETECTION_SCALE))
+    target_h = max(1, int(source_h * DETECTION_SCALE))
+    small_frame = cv2.resize(frame, (target_w, target_h), interpolation=cv2.INTER_AREA)
+    gray = cv2.cvtColor(small_frame, cv2.COLOR_BGR2GRAY)
+    gray = cv2.equalizeHist(gray)
+
     search_regions = [gray]
     if last_face_box is not None:
         x, y, w, h = last_face_box
         pad = int(max(w, h) * 0.35)
-        x0 = max(0, x - pad)
-        y0 = max(0, y - pad)
-        x1 = min(frame.shape[1], x + w + pad)
-        y1 = min(frame.shape[0], y + h + pad)
-        search_regions.append(gray[y0:y1, x0:x1])
+        x0 = max(0, int(x * DETECTION_SCALE) - pad)
+        y0 = max(0, int(y * DETECTION_SCALE) - pad)
+        x1 = min(target_w, int((x + w) * DETECTION_SCALE) + pad)
+        y1 = min(target_h, int((y + h) * DETECTION_SCALE) + pad)
+        if x1 > x0 and y1 > y0:
+            search_regions.append(gray[y0:y1, x0:x1])
 
     best_box = None
-    for region in search_regions:
+    for region_index, region in enumerate(search_regions):
         faces = face_cascade.detectMultiScale(
             region,
             scaleFactor=1.08,
-            minNeighbors=1,
-            minSize=(25, 25),
+            minNeighbors=2,
+            minSize=(20, 20),
         )
         if len(faces) == 0:
             continue
         x, y, w, h = max(faces, key=lambda box: box[2] * box[3])
-        if region is gray:
+        if region_index == 0:
             box = (x, y, w, h)
         else:
             box = (x + x0, y + y0, w, h)
@@ -149,6 +164,10 @@ def locate_face(frame):
         return None
 
     x, y, w, h = best_box
+    x = int(round(x / DETECTION_SCALE))
+    y = int(round(y / DETECTION_SCALE))
+    w = int(round(w / DETECTION_SCALE))
+    h = int(round(h / DETECTION_SCALE))
     last_face_box = (x, y, w, h)
     padding = int(0.2 * max(w, h))
     x = max(0, x - padding)
@@ -270,7 +289,7 @@ def classify_face(frame):
     return "neutral", 0.5, True, "Landmarks were weak; defaulted to neutral"
 
 
-def analyze_webcam(camera_index=0, interval=0.5):
+def analyze_webcam(camera_index=0, interval=PROCESS_INTERVAL):
     camera, actual_index = open_camera(camera_index)
     if camera is None:
         with state_lock:
@@ -281,6 +300,7 @@ def analyze_webcam(camera_index=0, interval=0.5):
     with state_lock:
         state["camera_index"] = actual_index
 
+    frame_counter = 0
     try:
         while not stop_event.is_set():
             ok, frame = camera.read()
@@ -289,6 +309,16 @@ def analyze_webcam(camera_index=0, interval=0.5):
                     state["error"] = "Could not read webcam frame"
                 stop_event.wait(interval)
                 continue
+
+            frame_counter += 1
+            if frame_counter % FRAME_SKIP != 0:
+                if cv2.waitKey(1) & 0xFF == ord("q"):
+                    stop_event.set()
+                    break
+                continue
+
+            if frame.shape[0] != FRAME_HEIGHT or frame.shape[1] != FRAME_WIDTH:
+                frame = cv2.resize(frame, (FRAME_WIDTH, FRAME_HEIGHT), interpolation=cv2.INTER_AREA)
 
             shape, confidence, face_found, error = classify_face(frame)
             face_history.append(1 if face_found else 0)
@@ -300,14 +330,13 @@ def analyze_webcam(camera_index=0, interval=0.5):
                 predicted_shape, predicted_count = max(
                     vote_counts.items(), key=lambda item: (item[1], item[0])
                 )
-                if predicted_count >= 2 or len(shape_history) >= 3:
+                if confidence >= 0.72 or predicted_count >= 2 or len(shape_history) >= 3:
                     selected_shape = predicted_shape
                 else:
                     selected_shape = shape
             else:
+                shape_history.clear()
                 selected_shape = "unknown"
-
-            display_label = selected_shape if face_detected and selected_shape != "unknown" else "No face"
 
             # Release build: no live camera preview or debug overlay. The server only
             # exposes the latest emotion state through the HTTP endpoint.

@@ -21,6 +21,8 @@ python -m pip install --upgrade pip
 python -m pip install -r requirements.txt
 python Face_Dectector.py
 
+
+curl http://127.0.0.1:5000/face_shape
 run:
 
 cd "C:\Users\theme\Documents\Educational Information\Fall 2026\KnightHacks26\KnightHacks2026"
