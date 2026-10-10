@@ -71,8 +71,8 @@ def ensure_haar_cascade():
         urllib.request.urlretrieve(url, fallback_path)
         if os.path.exists(fallback_path):
             return fallback_path
-    except Exception as exc:  # pragma: no cover - network-dependent fallback
-        print(f"DEBUG: unable to download Haar cascade XML: {exc}")
+    except Exception:
+        pass
 
     raise FileNotFoundError(
         "OpenCV Haar cascade XML is missing. Install opencv-contrib-python or download "
@@ -110,13 +110,11 @@ def locate_face(frame):
 
     try:
         cascade_path = ensure_haar_cascade()
-    except FileNotFoundError as exc:
-        print(f"DEBUG: {exc}")
+    except FileNotFoundError:
         return None
 
     face_cascade = cv2.CascadeClassifier(cascade_path)
     if face_cascade.empty():
-        print(f"DEBUG: Haar cascade failed to load: {cascade_path}")
         return None
 
     search_regions = [gray]
@@ -147,7 +145,6 @@ def locate_face(frame):
         best_box = box
         break
 
-    print(f"DEBUG: cascade path={cascade_path} faces_detected={0 if best_box is None else 1}")
     if best_box is None:
         return None
 
@@ -175,7 +172,6 @@ def normalize_face(face):
 def estimate_face_shape_from_landmarks(frame, face):
     global face_mesh
     if mp is None or not hasattr(mp, "solutions") or frame is None or frame.size == 0:
-        print(f"DEBUG: MediaPipe is unavailable: {MP_IMPORT_ERROR or 'mediapipe.solutions is missing'}")
         return None
 
     try:
@@ -191,7 +187,6 @@ def estimate_face_shape_from_landmarks(frame, face):
         rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
         results = face_mesh.process(rgb_frame)
         if not results.multi_face_landmarks:
-            print("DEBUG: FaceMesh found no face landmarks in frame")
             return None
 
         landmarks = results.multi_face_landmarks[0].landmark
@@ -258,8 +253,7 @@ def estimate_face_shape_from_landmarks(frame, face):
             return "surprise", min(0.99, 0.7 + (mouth_ratio * 0.2))
 
         return "neutral", 0.8
-    except Exception as exc:
-        print(f"DEBUG: landmark classification exception: {exc}")
+    except Exception:
         return None
 
 
@@ -313,25 +307,10 @@ def analyze_webcam(camera_index=0, interval=0.5):
             else:
                 selected_shape = "unknown"
 
-            if face_found:
-                print(f"DEBUG: face_found={face_found}, shape={shape}, confidence={confidence}, error={error}")
-            else:
-                print(f"DEBUG: face_found={face_found}, error={error}")
-
             display_label = selected_shape if face_detected and selected_shape != "unknown" else "No face"
-            cv2.putText(
-                frame,
-                f"Face Shape: {display_label}",
-                (20, 40),
-                cv2.FONT_HERSHEY_SIMPLEX,
-                1.0,
-                (0, 255, 0),
-                2,
-                cv2.LINE_AA,
-            )
 
-            # Temporary debug window to inspect the live camera feed.
-            cv2.imshow("Face Debug", frame)
+            # Release build: no live camera preview or debug overlay. The server only
+            # exposes the latest emotion state through the HTTP endpoint.
             if cv2.waitKey(1) & 0xFF == ord("q"):
                 stop_event.set()
                 break
