@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"CreateTempWebServer",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"CreateTempWebServer",
+  "parent":{
+    "name":"alieninterrogation",
+    "path":"alieninterrogation.yyp",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"getEmotion",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"getEmotion",
+  "parent":{
+    "name":"alieninterrogation",
+    "path":"alieninterrogation.yyp",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
