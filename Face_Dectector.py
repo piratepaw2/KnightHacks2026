@@ -1,5 +1,7 @@
 """Local webcam facial-emotion service.
 
+
+curl http://127.0.0.1:5000/emotion <-- returns the latest emotion as JSON.
 Install with: pip install opencv-python deepface flask
 DeepFace downloads its pretrained model on first use. Run this file and
 request http://127.0.0.1:5000/emotion for the latest emotion as JSON.
