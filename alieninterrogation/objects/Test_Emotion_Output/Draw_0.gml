@@ -1,6 +1,9 @@
-var state = global.emotion_debug.status;
-var result = global.emotion_debug.last_result;
-var count = string(global.emotion_debug.request_count);
+//methodology to extract emotion data
+var state = global.emotion_data.status;
+var result = global.emotion_data.last_result;
+var count = string(global.emotion_data.request_count);
+
+//everything below is just graphics things.
 
 var left = x - box_w * 0.5;
 var top = y - box_h * 0.5;
