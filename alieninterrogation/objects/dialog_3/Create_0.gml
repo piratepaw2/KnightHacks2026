@@ -19,10 +19,6 @@ messages = [
         name: "Interrogator",
         msg: "Here's the next image.",
         portrait: int_neutral
-    },
-	{
-        type: "image",
-        image: neutral
     }
 
 ];

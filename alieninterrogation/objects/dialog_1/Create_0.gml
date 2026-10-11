@@ -15,7 +15,7 @@ messages = [
 
     {
 		type: "dialogue",
-        name: "Interrogator",
+        name: "Interrogator",        
         msg: "You smiled. The natural reaction.",
         portrait: int_happy
     },
@@ -26,10 +26,6 @@ messages = [
         msg: "Here's the next image.",
         portrait: int_neutral
     },
-	{
-        type: "image",
-        image: fire
-    }
 
 ];
 

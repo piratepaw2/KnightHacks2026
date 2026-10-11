@@ -1,3 +1,4 @@
-//on destroy do quick time event
+//winner winner chicken dinner
 
-instance_create_layer(0, 0, "Dialogue", EmotionTracker);
+
+instance_create_layer(0, 0, "Dialogue", winning_dialog);
