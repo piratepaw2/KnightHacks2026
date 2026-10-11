@@ -1,4 +1,4 @@
-// Dialogue array
+ // Dialogue array
 messages = [
     {
 		type: "dialogue",
