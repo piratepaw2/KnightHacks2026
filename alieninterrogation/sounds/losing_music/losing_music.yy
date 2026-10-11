@@ -1,6 +1,6 @@
 {
   "$GMSound":"v2",
-  "%Name":"the_mountain_game_game_music_508018",
+  "%Name":"losing_music",
   "audioGroupId":{
     "name":"audiogroup_default",
     "path":"audiogroups/audiogroup_default",
@@ -10,9 +10,9 @@
   "compression":0,
   "compressionQuality":4,
   "conversionMode":0,
-  "duration":54.38694,
+  "duration":103.549385,
   "exportDir":"",
-  "name":"the_mountain_game_game_music_508018",
+  "name":"losing_music",
   "parent":{
     "name":"sound",
     "path":"folders/sound.yy",
@@ -21,6 +21,6 @@
   "resourceType":"GMSound",
   "resourceVersion":"2.0",
   "sampleRate":44100,
-  "soundFile":"the_mountain_game_game_music_508018.mp3",
+  "soundFile":"losing_music.mp3",
   "volume":1.0,
 }

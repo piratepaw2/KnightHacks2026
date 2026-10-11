@@ -1,3 +1,4 @@
+audio_play_sound(main_music, 0, true);
 // Dialogue array
 messages = [
     {
