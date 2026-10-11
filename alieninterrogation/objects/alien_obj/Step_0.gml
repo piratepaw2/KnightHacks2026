@@ -13,7 +13,7 @@ if (instance_exists(obj_dialog)) exit;
 var hor = keyboard_check(ord("D")) - keyboard_check(ord("A"));
 var ver = keyboard_check(ord("S")) - keyboard_check(ord("W"));
 
-move_and_collide(hor * move_speed, ver * move_speed, tilemap);
+move_and_collide(hor * move_speed, ver * move_speed, tilemap, undefined, undefined, undefined, move_speed, move_speed);
 
 /* here just put the walking sprites
 if(hor != 0 || ver != 0){

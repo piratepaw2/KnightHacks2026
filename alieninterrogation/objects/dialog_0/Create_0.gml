@@ -70,12 +70,7 @@ messages = [
         msg: "they struggle to show emotions.",
         portrait: int_neutral
     },
-	{
-		type: "dialogue",
-        name: "Alien",
-        msg: "...",
-        portrait: al_neutral
-    },
+
 	{
 		type: "dialogue",
         name: "Interrogator",
