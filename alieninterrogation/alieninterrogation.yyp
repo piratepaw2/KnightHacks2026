@@ -42,6 +42,7 @@
     {"id":{"name":"obj_fade","path":"objects/obj_fade/obj_fade.yy",},},
     {"id":{"name":"obj_int_dialog","path":"objects/obj_int_dialog/obj_int_dialog.yy",},},
     {"id":{"name":"obj_start","path":"objects/obj_start/obj_start.yy",},},
+    {"id":{"name":"reference_object_for_dialogue","path":"objects/reference_object_for_dialogue/reference_object_for_dialogue.yy",},},
     {"id":{"name":"Test_Emotion_Output","path":"objects/Test_Emotion_Output/Test_Emotion_Output.yy",},},
     {"id":{"name":"GAME_OVER_ROOM","path":"rooms/GAME_OVER_ROOM/GAME_OVER_ROOM.yy",},},
     {"id":{"name":"interrogation","path":"rooms/interrogation/interrogation.yy",},},
