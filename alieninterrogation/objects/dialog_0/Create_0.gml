@@ -119,10 +119,6 @@ messages = [
         name: "",
         msg: "You smiled.",
 		portrait: empty_sprite
-    },
-	{
-        type: "image",
-        image: happy
     }
 
 ];
