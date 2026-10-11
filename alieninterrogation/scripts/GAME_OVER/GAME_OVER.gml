@@ -17,7 +17,12 @@ function GAME_OVER(){
 			name: "Interrogator",
 			msg: "I guess you really are an alien.",
 			portrait: int_angry_covered
-		}];
+		},
+		{
+			type: "image",
+			image: game_over
+		}
+		];
 	
 		//THEN'
 		room_goto(GAME_OVER_ROOM);
@@ -36,7 +41,12 @@ function GAME_OVER(){
 			name: "Interrogator",
 			msg: "Guards, take him away!",
 			portrait: int_angry_covered
-		}];
+		},
+		{
+			type: "image",
+			image: game_over
+		}
+		];
 	
 		//THEN'
 		room_goto(GAME_OVER_ROOM);
@@ -55,6 +65,10 @@ function GAME_OVER(){
 			name: "Interrogator",
 			msg: "I'll see you in the labs, alien.",
 			portrait: int_angry_covered
+		},
+		{
+			type: "image",
+			image: game_over
 		}
 		];
 	
@@ -75,6 +89,10 @@ function GAME_OVER(){
 			name: "Interrogator",
 			msg:  "You're clearly an alien!",
 			portrait: int_angry_covered //surprise? angry?
+		},
+		{
+			type: "image",
+			image: game_over
 		}
 		];
 	

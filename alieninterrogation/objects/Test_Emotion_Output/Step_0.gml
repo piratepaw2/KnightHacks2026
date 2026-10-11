@@ -5,6 +5,6 @@ if (global.emotion_data.pending == false) {
 }
 
 // Select an option
-if (keyboard_check_pressed(vk_enter)) {
+if (keyboard_check_pressed(vk_space)) {
             room_goto(rm_start);
 }
