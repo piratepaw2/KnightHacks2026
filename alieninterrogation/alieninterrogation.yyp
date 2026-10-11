@@ -30,6 +30,7 @@
     {"id":{"name":"obj_dialog","path":"objects/obj_dialog/obj_dialog.yy",},},
     {"id":{"name":"Test_Emotion_Output","path":"objects/Test_Emotion_Output/Test_Emotion_Output.yy",},},
     {"id":{"name":"interrogation","path":"rooms/interrogation/interrogation.yy",},},
+    {"id":{"name":"PerceivedEmotionTestRoom","path":"rooms/PerceivedEmotionTestRoom/PerceivedEmotionTestRoom.yy",},},
     {"id":{"name":"CreateTempWebServer","path":"scripts/CreateTempWebServer/CreateTempWebServer.yy",},},
     {"id":{"name":"Dialogue","path":"scripts/Dialogue/Dialogue.yy",},},
     {"id":{"name":"getEmotion","path":"scripts/getEmotion/getEmotion.yy",},},
@@ -43,6 +44,7 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
+    {"roomId":{"name":"PerceivedEmotionTestRoom","path":"rooms/PerceivedEmotionTestRoom/PerceivedEmotionTestRoom.yy",},},
     {"roomId":{"name":"interrogation","path":"rooms/interrogation/interrogation.yy",},},
   ],
   "templateType":"game",

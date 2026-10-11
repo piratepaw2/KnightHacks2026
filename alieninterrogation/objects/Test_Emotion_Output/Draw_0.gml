@@ -22,7 +22,10 @@ draw_set_color(c_white);
 draw_set_alpha(1);
 draw_roundrect(left, top, right, bottom, true);
 
-draw_text(left + 16, top + 16, "Emotion HTTP Debug");
-draw_text(left + 16, top + 42, "Status: " + state);
-draw_text(left + 16, top + 68, "Result: " + result);
-draw_text(left + 16, top + 94, "Requests: " + count);
+draw_text(left + 16, top + 16, "Perceived Emotion Test");
+if(state == "requesting" or state == "ok") //shorten text
+	draw_text(left + 16, top + 42, "Server Status: ok!");
+else
+	draw_text(left + 16, top + 42, "Server Status: " + state);
+draw_text(left + 16, top + 68, "Perceived Emotion: " + result);
+draw_text(left + 16, top + 94, "Server Requests: " + count);

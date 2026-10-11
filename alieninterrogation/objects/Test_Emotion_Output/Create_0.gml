@@ -4,8 +4,8 @@ dragging = false;
 drag_offset_x = 0;
 drag_offset_y = 0;
 
-box_w = 360;
-box_h = 120;
+box_w = 600;
+box_h = 200;
 
 
 //starts the emotion process
