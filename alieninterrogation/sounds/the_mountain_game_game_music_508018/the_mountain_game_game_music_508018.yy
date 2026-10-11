@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"the_mountain_game_game_music_508018",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":54.38694,
+  "exportDir":"",
+  "name":"the_mountain_game_game_music_508018",
+  "parent":{
+    "name":"sound",
+    "path":"folders/sound.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"the_mountain_game_game_music_508018.mp3",
+  "volume":1.0,
+}
