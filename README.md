@@ -29,7 +29,6 @@ python .\alieninterrogation\Face_Detector.py
 
 curl http://127.0.0.1:5000/emotion
 run:
-
 cd "C:\Users\theme\Documents\Educational Information\Fall 2026\KnightHacks26\KnightHacks2026"
 .\.venv\Scripts\Activate.ps1
 python Face_Dectector.py

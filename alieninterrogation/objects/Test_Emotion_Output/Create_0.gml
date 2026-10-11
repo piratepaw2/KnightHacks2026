@@ -14,9 +14,18 @@ box_h = 200;
 
 //starts the emotion process
 
-if (!variable_global_exists("emotion_data")) {
-    StartEmotionProtocol();
-}
+global.emotion_data = {
+    status: "idle",
+    last_result: "unknown",
+    last_update: 0,
+    pending: false,
+    request_count: 0,
+    current_request: undefined
+};
+
+
+StartEmotionProtocol();
+
 
 
 x = room_width * 0.5;

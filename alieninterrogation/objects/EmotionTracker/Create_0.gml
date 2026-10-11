@@ -16,8 +16,15 @@
 	x = room_width * 0.5;
 	y = room_height * 0.8;	
 	*/
-	
-	
+	//reset
+	global.emotion_data = {
+    status: "idle",
+    last_result: "unknown",
+    last_update: 0,
+    pending: false,
+    request_count: 0,
+    current_request: undefined
+};
 	global.mostCommonEmotion = "N/A";
 	
 	
@@ -37,9 +44,9 @@
 	
 	gatherData = true;
 	
-	if (!variable_global_exists("emotion_data")) {
-		StartEmotionProtocol();
-	}
+	
+	StartEmotionProtocol();
+	
 
 	
 	// Trigger an inline function after a 2-second delay
