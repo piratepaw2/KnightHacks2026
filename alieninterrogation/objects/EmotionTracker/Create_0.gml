@@ -41,7 +41,7 @@
 	[0, "Neutral"]
 	];
 	
-	time_to_emote_in_seconds = 10;
+	time_to_emote_in_seconds = 6;
 	
 	sadIndex = 0;
 	happyIndex = 1;
