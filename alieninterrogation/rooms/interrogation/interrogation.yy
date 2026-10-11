@@ -8,23 +8,6 @@
   "instanceCreationOrder":[
     {"name":"inst_32A0EB1C","path":"rooms/interrogation/interrogation.yy",},
     {"name":"inst_296FDF6B","path":"rooms/interrogation/interrogation.yy",},
-<<<<<<< HEAD
-    {"name":"inst_F85BD60","path":"rooms/interrogation/interrogation.yy",},
-  ],
-  "isDnd":false,
-  "layers":[
-    {"$GMRInstanceLayer":"","%Name":"Instances_1","depth":0,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
-        {"$GMRInstance":"v4","%Name":"inst_F85BD60","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_F85BD60","objectId":{"name":"Test_Emotion_Output","path":"objects/Test_Emotion_Output/Test_Emotion_Output.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":544.0,"y":192.0,},
-      ],"layers":[],"name":"Instances_1","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
-    {"$GMRTileLayer":"","%Name":"tile_col","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"tile_col","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":48,"SerialiseWidth":86,"TileCompressedData":[
-          -625,-2147483648,-28,3,-58,-2147483648,1,3,-26,-2147483648,1,3,-58,-2147483648,1,3,-26,-2147483648,1,
-          3,-58,-2147483648,1,3,-26,-2147483648,1,3,-58,-2147483648,1,3,-26,-2147483648,1,3,-58,-2147483648,1,
-          3,-26,-2147483648,1,3,-58,-2147483648,1,3,-18,-2147483648,-9,3,-58,-2147483648,1,3,-18,-2147483648,1,
-          3,-66,-2147483648,1,3,-18,-2147483648,1,3,-66,-2147483648,1,3,-18,-2147483648,1,3,-66,-2147483648,1,
-          3,-18,-2147483648,1,3,-66,-2147483648,1,3,-18,-2147483648,1,3,-66,-2147483648,1,3,-18,-2147483648,1,
-          3,-66,-2147483648,1,3,-18,-2147483648,1,3,-66,-2147483648,1,3,-18,-2147483648,1,3,-66,-2147483648,-20,
-          3,-2193,-2147483648,
-=======
     {"name":"inst_48D99ED8","path":"rooms/interrogation/interrogation.yy",},
   ],
   "isDnd":false,
@@ -38,7 +21,6 @@
           1,3,-66,-2147483648,1,3,-4,2,-14,-2147483648,1,3,-66,-2147483648,1,3,-4,2,-14,-2147483648,1,3,-66,-2147483648,
           1,3,-18,2,1,3,-66,-2147483648,1,3,-18,2,1,3,-66,-2147483648,1,3,-18,2,1,3,-66,-2147483648,-20,3,-2193,
           -2147483648,
->>>>>>> elenas-part
         ],"TileDataFormat":1,},"tilesetId":{"name":"roomtileset","path":"tilesets/roomtileset/roomtileset.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
     {"$GMRInstanceLayer":"","%Name":"Instances","depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v4","%Name":"inst_32A0EB1C","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_32A0EB1C","objectId":{"name":"alien_obj","path":"objects/alien_obj/alien_obj.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":0.5,"scaleY":0.5,"x":736.0,"y":160.0,},
