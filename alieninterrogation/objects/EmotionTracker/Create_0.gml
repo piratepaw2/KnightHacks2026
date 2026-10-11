@@ -2,7 +2,7 @@
 	//this instance sets the most common emotion after 
 	//n seconds (rn its 10) and then destroys itself.
 	//The draw part is how the system counts and stuff.
-	
+	//initializes most common emotion to N/A
 	
 	//graphics data 
 	/*
@@ -17,9 +17,9 @@
 	y = room_height * 0.8;	
 	*/
 	
-	if (!variable_global_exists("mostCommonEmotion")) {
-		global.mostCommonEmotion = "N/A";
-	}
+	
+	global.mostCommonEmotion = "N/A";
+	
 	
 	counts = [
 	[0, "Sad"], 
