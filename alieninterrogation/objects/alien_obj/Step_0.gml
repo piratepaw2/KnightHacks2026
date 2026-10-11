@@ -1,6 +1,6 @@
 if (instance_exists(obj_dialog)) exit;
 
-/*if (keyboard_check_pressed(vk_space)){
+if (keyboard_check_pressed(vk_space)){
 	create_dialog([
 	{
 		name: "Test dialog",
@@ -8,7 +8,7 @@ if (instance_exists(obj_dialog)) exit;
 	}
 	])
 
-} */
+}
 
 var hor = keyboard_check(ord("D")) - keyboard_check(ord("A"));
 var ver = keyboard_check(ord("S")) - keyboard_check(ord("W"));
