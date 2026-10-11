@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"GetMostCommonEmotion",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"GetMostCommonEmotion",
+  "parent":{
+    "name":"alieninterrogation",
+    "path":"alieninterrogation.yyp",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
