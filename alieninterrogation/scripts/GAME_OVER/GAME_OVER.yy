@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"GAME_OVER",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"GAME_OVER",
+  "parent":{
+    "name":"alieninterrogation",
+    "path":"alieninterrogation.yyp",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
