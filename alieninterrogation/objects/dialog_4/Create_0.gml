@@ -3,8 +3,14 @@ audio_play_sound(interrogation_music, 0, true);
 messages = [
     {
 		type: "dialogue",
-        name: "Interrogator",
+        name: "",
         msg: "You remained neutral.",
+		portrait: empty_sprite
+    },
+    {
+		type: "dialogue",
+        name: "Interrogator",
+        msg: "Interesting.",
         portrait: int_neutral
     },
 

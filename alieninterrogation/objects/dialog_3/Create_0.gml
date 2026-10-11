@@ -3,6 +3,12 @@ audio_play_sound(interrogation_music, 0, true);
 messages = [
     {
 		type: "dialogue",
+        name: "",
+        msg: "You frowned.",
+		portrait: empty_sprite
+    },
+    {
+		type: "dialogue",
         name: "Interrogator",
         msg: "Yes..yes..",
         portrait: int_neutral

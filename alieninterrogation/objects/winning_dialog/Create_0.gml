@@ -18,7 +18,7 @@ messages = [
 		type: "dialogue",
         name: "Interrogator",
         msg: "I knew you were a human!",
-        portrait: int_angry
+        portrait: int_happy
     },
 	
 	
@@ -33,7 +33,7 @@ messages = [
 		type: "dialogue",
         name: "Alien",
         msg: "Of course I am!",
-        portrait: al_neutral
+        portrait: al_smile_1
     },
 
     {
@@ -53,8 +53,8 @@ messages = [
     {
 		type: "dialogue",
         name: "Alien",
-        msg: "...",
-        portrait: al_neutral
+        msg: "Thank you, fellow human!",
+        portrait: al_smile_1
     }
 ];
 

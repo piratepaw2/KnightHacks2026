@@ -1,6 +1,14 @@
 audio_play_sound(interrogation_music, 0, true);
 // Dialogue array
 messages = [
+
+    {
+		type: "dialogue",
+        name: "",
+        msg: "You were surprised.",
+		portrait: empty_sprite
+    },
+	
     {
 		type: "dialogue",
         name: "Interrogator",
