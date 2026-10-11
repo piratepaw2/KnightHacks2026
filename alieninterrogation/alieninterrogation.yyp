@@ -24,7 +24,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2026.0.0.16",
+    "IDEVersion":"2024.14.4.222",
   },
   "name":"alieninterrogation",
   "resources":[
@@ -70,6 +70,7 @@
     {"id":{"name":"alien_sprite","path":"sprites/alien_sprite/alien_sprite.yy",},},
     {"id":{"name":"empty_sprite","path":"sprites/empty_sprite/empty_sprite.yy",},},
     {"id":{"name":"fire","path":"sprites/fire/fire.yy",},},
+    {"id":{"name":"game_over","path":"sprites/game_over/game_over.yy",},},
     {"id":{"name":"happy","path":"sprites/happy/happy.yy",},},
     {"id":{"name":"happy2","path":"sprites/happy2/happy2.yy",},},
     {"id":{"name":"int_angry_covered","path":"sprites/int_angry_covered/int_angry_covered.yy",},},
@@ -85,6 +86,7 @@
     {"id":{"name":"spr_box","path":"sprites/spr_box/spr_box.yy",},},
     {"id":{"name":"spr_menu_bg","path":"sprites/spr_menu_bg/spr_menu_bg.yy",},},
     {"id":{"name":"Sprite7","path":"sprites/Sprite7/Sprite7.yy",},},
+    {"id":{"name":"start_menu","path":"sprites/start_menu/start_menu.yy",},},
     {"id":{"name":"talk","path":"sprites/talk/talk.yy",},},
     {"id":{"name":"new_tileset","path":"tilesets/new_tileset/new_tileset.yy",},},
     {"id":{"name":"roomtileset","path":"tilesets/roomtileset/roomtileset.yy",},},

@@ -3,10 +3,9 @@ fade_speed = 0.03;
 
 fade_state = 0;
 // 0 = inactive
-// 1 = fading to black
-// 2 = fading back in
+// 1 = fade to black
+// 2 = fade back in
 
-target_room = rm_int;
+target_room = -1;
 
-// Keep this object alive between rooms
 persistent = true;

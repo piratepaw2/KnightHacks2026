@@ -5,6 +5,9 @@ global.Emotion_Solution_Array = ["Happy", "Surprised", "Sad", "Neutral", "Happy"
 
 selected = 0;
 
+bg_frame = 0;
+bg_speed = 0.09;
+
 menu_options = [
     "START",
 	"TEST CAMERA",
