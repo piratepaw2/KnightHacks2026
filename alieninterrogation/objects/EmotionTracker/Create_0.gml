@@ -18,7 +18,7 @@
 	*/
 	
 	if (!variable_global_exists("mostCommonEmotion")) {
-		global.mostCommonEmotion = "Neutral";
+		global.mostCommonEmotion = "N/A";
 	}
 	
 	counts = [
