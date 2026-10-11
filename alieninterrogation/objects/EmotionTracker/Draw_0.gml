@@ -19,7 +19,10 @@ var left = x - box_w * 0.5;
 var top = y - box_h * 0.5;
 var right = left + box_w;
 var bottom = top + box_h;
+*/
 
+
+/*
 draw_set_font(Font1);
 draw_set_halign(fa_left);
 draw_set_valign(fa_top);

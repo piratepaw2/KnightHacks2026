@@ -9,13 +9,19 @@
 	dragging = false;
 	drag_offset_x = 0;
 	drag_offset_y = 0;
-
+	*/
 	box_w = 600;
 	box_h = 200;
 
 	x = room_width * 0.5;
 	y = room_height * 0.8;	
-	*/
+	
+	
+	image_to_print = {
+		type: "image",
+		image: global.Image_Array[global.CURRENT_DIALOGUE]
+	}
+	
 	//reset
 	global.emotion_data = {
     status: "idle",
