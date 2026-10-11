@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":0,
   "parent":{
-    "name":"objects",
-    "path":"folders/objects.yy",
+    "name":"char sprites",
+    "path":"folders/char sprites.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

@@ -17,8 +17,8 @@
   ],
   "name":"rm_start",
   "parent":{
-    "name":"alieninterrogation",
-    "path":"alieninterrogation.yyp",
+    "name":"rooms",
+    "path":"folders/rooms.yy",
   },
   "parentRoom":null,
   "physicsSettings":{
