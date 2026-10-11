@@ -8,8 +8,8 @@ var gh = display_get_gui_height();
 var current = messages[cur_message];
 
 // Draw background
-draw_set_color(c_black);
-draw_rectangle(0, 0, gw, gh, false);
+//draw_set_color(c_black);
+//draw_rectangle(0, 0, gw, gh, false);
 
 
 // IMAGE EVENT

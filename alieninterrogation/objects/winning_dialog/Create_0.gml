@@ -1,0 +1,62 @@
+// Dialogue array
+messages = [
+    {
+		type: "dialogue",
+        name: "Interrogator",
+        msg: "The test is complete.",
+        portrait: int_neutral
+    },
+
+    {
+		type: "dialogue",
+        name: "Interrogator",
+        msg: "I have only one thing to say.",
+        portrait: int_neutral
+    },
+	
+	    {
+		type: "dialogue",
+        name: "Interrogator",
+        msg: "I knew you were a human!",
+        portrait: int_angry
+    },
+	
+	
+    {
+		type: "dialogue",
+        name: "Alien",
+        msg: "!!!",
+        portrait: al_surprise
+    },
+
+    {
+		type: "dialogue",
+        name: "Alien",
+        msg: "Of course I am!",
+        portrait: al_neutral
+    },
+
+    {
+		type: "dialogue",
+        name: "Interrogator",
+        msg: "I'm sorry for the trouble.",
+        portrait: int_neutral
+    },
+	
+	{
+		type: "dialogue",
+        name: "Interrogator",
+        msg: "Let's get dinner.. on me.",
+        portrait: int_neutral
+    },
+	
+    {
+		type: "dialogue",
+        name: "Alien",
+        msg: "...",
+        portrait: al_neutral
+    }
+];
+
+// Current dialogue line
+cur_message = 0;

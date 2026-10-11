@@ -46,7 +46,7 @@ messages = [
 	{
 		type: "dialogue",
         name: "Interrogator",
-        msg: "that will tell me all I need to know.",
+        msg: "and they will tell me all I need to know.",
         portrait: int_neutral
     },
 
@@ -104,25 +104,25 @@ messages = [
 		type: "dialogue",
         name: "Interrogator",
         msg: "Let's begin.",
-        portrait: int_neutral
+        portrait: int_happy
     },
 	{
 		type: "dialogue",
         name: "Interrogator",
         msg: "Here's the first image.",
         portrait: int_neutral
+    },
+	    {
+		type: "dialogue",
+        name: "",
+        msg: "You smiled.",
+		portrait: empty_sprite
     },
 	{
         type: "image",
         image: happy
-    },
-	
-	{
-		type: "dialogue",
-        name: "Interrogator",
-        msg: "Here's the first image.",
-        portrait: int_neutral
-    },
+    }
+
 ];
 
 // Current dialogue line
