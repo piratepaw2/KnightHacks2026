@@ -1,0 +1,26 @@
+{
+  "$GMSound":"v2",
+  "%Name":"sigmamusicart_tense_suspense_background_music_376385",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "channelFormat":0,
+  "compression":0,
+  "compressionQuality":4,
+  "conversionMode":0,
+  "duration":103.549385,
+  "exportDir":"",
+  "name":"sigmamusicart_tense_suspense_background_music_376385",
+  "parent":{
+    "name":"sound",
+    "path":"folders/sound.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"sigmamusicart_tense_suspense_background_music_376385.mp3",
+  "volume":1.0,
+}
