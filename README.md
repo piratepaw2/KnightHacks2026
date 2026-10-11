@@ -32,3 +32,5 @@ run:
 cd "C:\Users\theme\Documents\Educational Information\Fall 2026\KnightHacks26\KnightHacks2026"
 .\.venv\Scripts\Activate.ps1
 python Face_Dectector.py
+
+py -3.11 Face_Dectector.py
