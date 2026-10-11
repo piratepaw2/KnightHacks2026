@@ -4,10 +4,8 @@ if (instance_exists(alien_obj) && distance_to_object(alien_obj) < 8){
 
 	can_talk = true;
 	if (keyboard_check_pressed(input_key)){
-		create_dialog(dialog);
+		create_dialog(welcome_dialog);
 	}
-
-
 }else{
 	can_talk = false;
 }
