@@ -16,7 +16,7 @@ function GAME_OVER(){
 			type: "dialogue",
 			name: "Interrogator",
 			msg: "I guess you really are an alien.",
-			portrait: int_angry
+			portrait: int_angry_covered
 		}];
 	
 		//THEN'
@@ -35,7 +35,7 @@ function GAME_OVER(){
 			type: "dialogue",
 			name: "Interrogator",
 			msg: "Guards, take him away!",
-			portrait: int_angry	
+			portrait: int_angry_covered
 		}];
 	
 		//THEN'
@@ -54,7 +54,7 @@ function GAME_OVER(){
 			type: "dialogue",
 			name: "Interrogator",
 			msg: "I'll see you in the labs, alien.",
-			portrait: int_angry
+			portrait: int_angry_covered
 		}
 		];
 	
@@ -74,7 +74,7 @@ function GAME_OVER(){
 			type: "dialogue",
 			name: "Interrogator",
 			msg:  "You're clearly an alien!",
-			portrait: int_angry //surprise? angry?
+			portrait: int_angry_covered //surprise? angry?
 		}
 		];
 	
