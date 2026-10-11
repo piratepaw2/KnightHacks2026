@@ -6,7 +6,7 @@ fade_state = 0;
 // 1 = fading to black
 // 2 = fading back in
 
-target_room = -1;
+target_room = rm_int;
 
 // Keep this object alive between rooms
 persistent = true;
