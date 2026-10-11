@@ -44,6 +44,12 @@
     {"id":{"name":"al_neutral","path":"sprites/al_neutral/al_neutral.yy",},},
     {"id":{"name":"al_surprise","path":"sprites/al_surprise/al_surprise.yy",},},
     {"id":{"name":"alien_sprite","path":"sprites/alien_sprite/alien_sprite.yy",},},
+<<<<<<< Updated upstream
+=======
+    {"id":{"name":"empty_sprite","path":"sprites/empty_sprite/empty_sprite.yy",},},
+    {"id":{"name":"fire","path":"sprites/fire/fire.yy",},},
+    {"id":{"name":"game_over","path":"sprites/game_over/game_over.yy",},},
+>>>>>>> Stashed changes
     {"id":{"name":"happy","path":"sprites/happy/happy.yy",},},
     {"id":{"name":"int_angry","path":"sprites/int_angry/int_angry.yy",},},
     {"id":{"name":"int_bg","path":"sprites/int_bg/int_bg.yy",},},

@@ -113,12 +113,6 @@ messages = [
         name: "Interrogator",
         msg: "Here's the first image.",
         portrait: int_neutral
-    },
-	    {
-		type: "dialogue",
-        name: "",
-        msg: "You smiled.",
-		portrait: empty_sprite
     }
 
 ];
