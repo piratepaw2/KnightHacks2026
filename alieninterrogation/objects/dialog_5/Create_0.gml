@@ -5,7 +5,7 @@ messages = [
 		type: "dialogue",
         name: "",
         msg: "You smiled.",
-		portrait: empty_sprite
+		portrait: test_background
     },
     {
 		type: "dialogue",
