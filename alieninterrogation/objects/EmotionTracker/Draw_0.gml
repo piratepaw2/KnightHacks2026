@@ -14,7 +14,7 @@ if(result == "frown"){
 
 
 //everything below is just graphics things.
-
+/*
 var left = x - box_w * 0.5;
 var top = y - box_h * 0.5;
 var right = left + box_w;
@@ -38,3 +38,4 @@ draw_text(left + 16, top + 68, "Surprised: " + string(counts[surprisedIndex, 0])
 draw_text(left + 16, top + 92, "Neutral: " + string(counts[neutralIndex, 0]));
 draw_text(left + 16, top + 116, "MCE: " + global.mostCommonEmotion);
 draw_text(left + 16, top + 140,string(counts));
+*/

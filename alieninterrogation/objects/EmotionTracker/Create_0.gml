@@ -1,5 +1,11 @@
 
+	//this instance sets the most common emotion after 
+	//n seconds (rn its 10) and then destroys itself.
+	//The draw part is how the system counts and stuff.
 	
+	
+	//graphics data 
+	/*
 	dragging = false;
 	drag_offset_x = 0;
 	drag_offset_y = 0;
@@ -9,7 +15,7 @@
 
 	x = room_width * 0.5;
 	y = room_height * 0.8;	
-	
+	*/
 	
 	if (!variable_global_exists("mostCommonEmotion")) {
 		global.mostCommonEmotion = "Neutral";
@@ -46,7 +52,7 @@
 		
 		global.mostCommonEmotion = counts[0, 1];
 		
-		
+		instance_destroy();
 		
 	});
 	
