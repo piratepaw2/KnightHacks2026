@@ -1,6 +1,8 @@
 //debug box thing
 
-
+menu_options = [
+   "RETURN TO MAIN MENU"
+];
 
 dragging = false;
 drag_offset_x = 0;
@@ -11,7 +13,6 @@ box_h = 200;
 
 
 //starts the emotion process
-
 
 if (!variable_global_exists("emotion_data")) {
     StartEmotionProtocol();

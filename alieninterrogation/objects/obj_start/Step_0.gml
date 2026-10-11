@@ -25,7 +25,10 @@ if (keyboard_check_pressed(vk_enter)) {
             room_goto(interrogation);
             break;
 
-        case 1:
+		case 1:
+			room_goto(PerceivedEmotionTestRoom);
+			break;
+        case 2:
             game_end();
             break;
     }

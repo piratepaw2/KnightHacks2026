@@ -64,8 +64,8 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
-    {"roomId":{"name":"PerceivedEmotionTestRoom","path":"rooms/PerceivedEmotionTestRoom/PerceivedEmotionTestRoom.yy",},},
     {"roomId":{"name":"rm_start","path":"rooms/rm_start/rm_start.yy",},},
+    {"roomId":{"name":"PerceivedEmotionTestRoom","path":"rooms/PerceivedEmotionTestRoom/PerceivedEmotionTestRoom.yy",},},
     {"roomId":{"name":"rm_int","path":"rooms/rm_int/rm_int.yy",},},
     {"roomId":{"name":"interrogation","path":"rooms/interrogation/interrogation.yy",},},
   ],
