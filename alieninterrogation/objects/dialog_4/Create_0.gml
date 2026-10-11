@@ -5,7 +5,7 @@ messages = [
 		type: "dialogue",
         name: "",
         msg: "You remained neutral.",
-		portrait: test_background
+		portrait: empty_sprite
     },
     {
 		type: "dialogue",
