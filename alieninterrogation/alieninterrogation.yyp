@@ -11,6 +11,8 @@
   "defaultScriptType":1,
   "Folders":[
     {"$GMFolder":"","%Name":"char sprites","folderPath":"folders/char sprites.yy","name":"char sprites","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"fonts","folderPath":"folders/fonts.yy","name":"fonts","resourceType":"GMFolder","resourceVersion":"2.0",},
+    {"$GMFolder":"","%Name":"rooms","folderPath":"folders/rooms.yy","name":"rooms","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"objects","folderPath":"folders/objects.yy","name":"objects","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"tiles,tileset","folderPath":"folders/tiles,tileset.yy","name":"tiles,tileset","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
@@ -24,6 +26,7 @@
   "name":"alieninterrogation",
   "resources":[
     {"id":{"name":"Font1","path":"fonts/Font1/Font1.yy",},},
+    {"id":{"name":"start_font","path":"fonts/start_font/start_font.yy",},},
     {"id":{"name":"alien_obj","path":"objects/alien_obj/alien_obj.yy",},},
     {"id":{"name":"int_parent","path":"objects/int_parent/int_parent.yy",},},
     {"id":{"name":"interrogator_obj","path":"objects/interrogator_obj/interrogator_obj.yy",},},
@@ -32,6 +35,7 @@
     {"id":{"name":"obj_fade","path":"objects/obj_fade/obj_fade.yy",},},
     {"id":{"name":"obj_start","path":"objects/obj_start/obj_start.yy",},},
     {"id":{"name":"interrogation","path":"rooms/interrogation/interrogation.yy",},},
+    {"id":{"name":"rm_int","path":"rooms/rm_int/rm_int.yy",},},
     {"id":{"name":"rm_start","path":"rooms/rm_start/rm_start.yy",},},
     {"id":{"name":"Dialogue","path":"scripts/Dialogue/Dialogue.yy",},},
     {"id":{"name":"alien_sprite","path":"sprites/alien_sprite/alien_sprite.yy",},},
@@ -48,6 +52,7 @@
   "RoomOrderNodes":[
     {"roomId":{"name":"rm_start","path":"rooms/rm_start/rm_start.yy",},},
     {"roomId":{"name":"interrogation","path":"rooms/interrogation/interrogation.yy",},},
+    {"roomId":{"name":"rm_int","path":"rooms/rm_int/rm_int.yy",},},
   ],
   "templateType":"game",
   "TextureGroups":[
