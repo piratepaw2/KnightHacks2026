@@ -56,7 +56,11 @@ messages = [
         name: "Alien",
         msg: "Thank you, fellow human!",
         portrait: al_smile_1
-    }
+    },
+	{
+			type: "image",
+			image: win_screen
+		}
 ];
 
 // Current dialogue line
