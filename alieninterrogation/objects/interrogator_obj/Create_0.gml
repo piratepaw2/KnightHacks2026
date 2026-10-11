@@ -1,4 +1,5 @@
 input_key = vk_space;
+bello = 0;
 
 can_talk = false;
 

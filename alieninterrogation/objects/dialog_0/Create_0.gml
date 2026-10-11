@@ -2,13 +2,13 @@
 
 // Dialogue array
 messages = [
+
     {
 		type: "dialogue",
         name: "Interrogator",
-        msg: "Let's begin.",
+        msg: "This is difficult to say, but..",
         portrait: int_neutral
     },
-
     {
 		type: "dialogue",
         name: "Interrogator",
@@ -70,12 +70,7 @@ messages = [
         msg: "they struggle to show emotions.",
         portrait: int_neutral
     },
-	{
-		type: "dialogue",
-        name: "Alien",
-        msg: "...",
-        portrait: al_neutral
-    },
+
 	{
 		type: "dialogue",
         name: "Interrogator",
