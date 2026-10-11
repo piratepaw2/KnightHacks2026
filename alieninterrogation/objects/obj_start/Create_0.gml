@@ -3,6 +3,8 @@ global.CURRENT_DIALOGUE = 0; //init to 0
 global.Image_Array = [happy, fire, sad, neutral, happy2];
 global.Emotion_Solution_Array = ["Happy", "Surprised", "Sad", "Neutral", "Happy"];
 
+audio_play_sound(main_music, 0, true);
+
 selected = 0;
 
 bg_frame = 0;

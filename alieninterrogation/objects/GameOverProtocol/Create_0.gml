@@ -1,3 +1,5 @@
+audio_play_sound(losing_music, 0, true);
+
 box_w = 600;
 box_h = 200;
 

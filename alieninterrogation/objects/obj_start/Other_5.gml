@@ -1,0 +1,1 @@
+audio_stop_sound(main_music);
